@@ -225,7 +225,7 @@ export default class extends Component {
     if (this.props.autoplay && !prevProps.autoplay) {
       this.autoplay()
     }
-    if (this.props.children !== prevProps.children) {
+    if (Platform.OS !== 'ios' && this.props.children !== prevProps.children) {
       this.setState(
         this.initState({ ...this.props, index: this.state.index }, true)
       )
